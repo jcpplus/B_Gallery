@@ -1,0 +1,165 @@
+/* Colors for my App. Do not override them! */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+}
+.img-thumbnail {
+  width: 100%;
+  width: 100% \9;
+}
+.dropdown .glyphicon {
+  visibility: hidden;
+}
+.dropdown .addedMarkPoint .glyphicon {
+  visibility: visible;
+}
+.dropDownItem {
+  padding-left: 10px;
+}
+.containerMenu {
+  height: 100%;
+}
+.navPillsBar {
+  margin-bottom: 10px;
+}
+.thumbnail:hover {
+  cursor: pointer;
+}
+.error .form-control {
+.ribbon-greenborder-color: #cc3333;
+  box-shadow: inset 0 1px 1px rgba(255, 0, 0, 0.075);
+}
+.error span {
+  color: #cc3333;
+}
+.formWrapper {
+  padding: 15px;
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+.ribbon-wrapper-green {
+  height: 58px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: 12px;
+}
+.ribbon-green {
+  font: bold 15px Sans-Serif;
+  color: #6a6340;
+  text-align: center;
+  position: relative;
+  padding: 7px 0;
+  top: 15px;
+  width: 121px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bfdc7a), to(#8ebf45));
+  background: -webkit-linear-gradient(top, #bfdc7a, #8ebf45);
+  background: -moz-linear-gradient(top, #bfdc7a, #8ebf45);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.ribbon-green:before,
+.ribbon-green:after {
+  content: "";
+  border-top: 3px solid #6e8900;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  position: absolute;
+  bottom: -3px;
+}
+.ribbon-green:before {
+  left: 1px;
+}
+.ribbon-green:after {
+  right: 2px;
+}
+.menuItemDescription {
+  clear: left;
+  height: 45px;
+  overflow: hidden;
+  position: relative;
+}
+.menuOpacity {
+  position: absolute;
+  height: 35px;
+  bottom: 0;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+}
+.ulIngredients {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: left;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+.menuItemDetailedView {
+  height: 100%;
+  margin: 0 -15px;
+}
+.menuItemDetailedView .entryMenu {
+  width: 100%;
+  float: left;
+  margin-right: 5%;
+}
+.menuItemDetailedView .entryMenu h1 {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  line-height: 125%;
+  margin-top: 0;
+  padding-top: 4px;
+}
+.menuItemDetailedView .entryMenu .menuItemDescriptionDetailed {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+}
+.returnMenuButton {
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  visibility: visible;
+  border: 0px;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), color-stop(0.5, #f8f8f8), to(#e7e7e7));
+  background: -webkit-linear-gradient(top, #e7e7e7 0%, #f8f8f8 50%, #e7e7e7 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.returnMenuButton:hover {
+  cursor: pointer;
+}
+#returnMenuButtonVertical {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: rotate(-90deg) translate(0, -100%);
+  -moz-transform: rotate(-90deg) translate(0, -100%);
+}
+#returnMenuButtonHorizontal {
+  left: 50%;
+  margin-top: -15px;
+  -webkit-transform: rotate(0) translate(-50%, 0);
+  -moz-transform: rotate(0) translate(-50%, 0);
+}
