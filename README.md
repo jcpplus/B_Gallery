@@ -9,8 +9,8 @@ underscore, backbone, jquery, bootstrap
 # TODO
 - ~~设计API~~
 - 改进API
-- 单页面浏览
-- 点击查看大图
+- ~~单页面浏览~~
+- 点击图片详细信息
 - 持续改进, 性能优化
 - 必要的文档说明，如本README
 - lazyLoad img
