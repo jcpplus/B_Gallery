@@ -43,5 +43,5 @@ require([
     new AppView();
     // Initialize routing and start Backbone.history()
 
-    Backbone.history.start({});
+    Backbone.history.start({pushstate:true});
 });

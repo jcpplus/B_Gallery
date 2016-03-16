@@ -17,6 +17,7 @@ define([
 
         showDetails: function() {
             itemRouter.navigate('item/'+this.model.get('id'), true);
+
         },
         template: _.template(template),
         render: function() {

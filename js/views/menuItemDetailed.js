@@ -14,6 +14,7 @@ define([
         },
         initialize: function(){
             vent.on('menu:show', this.destroyView, this);
+
         },
         destroyView: function() {
           this.remove();

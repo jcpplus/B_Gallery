@@ -16,7 +16,6 @@ define([
         sortByField: function (fieldName) {
             this.sortKey = fieldName;
             this.sort();
-            console.log(this.sort());
         }
     });
     return MenuCollection;

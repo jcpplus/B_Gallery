@@ -1,6 +1,5 @@
-<div id="returnMenuButtonVertical" class="hidden-xs returnMenuButton">返回</div>
 <div class="row">
-    <div id="returnMenuButtonHorizontal" class="col-xs-12 visible-xs returnMenuButton">返回</div>
+    <div id="returnMenuButton" class="returnMenuButton">返回</div>
 </div>
 <div class="row">
     <div class=" col-xs-12 col-sm-5 col-sm-push-5">
@@ -10,7 +9,7 @@
     </div>
     <div class="col-xs-12 col-sm-offset-2 col-sm-3 col-sm-pull-5">
         <img src="<%= imageLink %>" class="img-thumbnail">
-        <% if (+discount) { %>
+        <% if (discount) { %>
         <div class="ribbon-wrapper-green">
             <div class="ribbon-green">View：<%= discount %> 万次</div>
         </div>
@@ -19,18 +18,28 @@
 </div>
 <div class="row">
     <div class="col-xs-12 col-sm-offset-2 col-sm-3 col-sm-pull-0">
-        <h2>Ingredients: </h2>
-        <div class="menuItemIngredientsDetailed">
-            <ul class="ulIngredients">
-                <li><%= ingredients[0] %></li>
-                <li><%= ingredients[1] %></li>
-                <li><%= ingredients[2] %></li>
-            </ul>
-        </div>
+        <% if (ingredients) { %>
+            <% if (!$.isEmptyObject(ingredients)) {%>
+            <h2>元素简介:</h2>
+            <div class="menuItemIngredientsDetailed">
+                <ul class="ulIngredients">
+                    <% if (ingredients[0]) { %>
+                    <li><%= ingredients[0] %></li>
+                    <% } %>
+                    <% if (ingredients[1]) { %>
+                    <li><%= ingredients[1] %></li>
+                    <% } %>
+                    <% if (ingredients[2]) { %>
+                    <li><%= ingredients[2] %></li>
+                <% } %>
+                </ul>
+            </div>
+            <% } %>
+        <% } %>
     </div>
     <div class=" col-xs-12 col-sm-5">
         <div class="entryMenu">
-            <h2>Description: </h2>
+            <h2>详细描述: </h2>
             <div class="menuItemDescriptionDetailed"><%= description %></div>
         </div>
     </div>
