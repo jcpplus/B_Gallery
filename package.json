@@ -7,7 +7,9 @@
     "requirejs": "^2.1.15",
     "requirejs-text": "^2.0.12",
     "underscore": "^1.7.0",
-    "bootstrap" : "^3.2.0"
-
+    "bootstrap": "^3.2.0"
+  },
+  "devDependencies": {
+    "zepto": "^1.0.1"
   }
 }

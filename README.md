@@ -6,6 +6,9 @@ underscore, backbone, jquery, bootstrap
 
 > 别想那么多，挽起袖子直接干！
 
+# run
+> npm install
+
 # TODO
 - ~~设计API~~
 - 改进API
@@ -22,6 +25,8 @@ underscore, backbone, jquery, bootstrap
 ### 2016.03.16
 - 优化数据
 - 实现详细页面
+
+- new branch name: zm-branch
 
 
 ### 2016.03.14

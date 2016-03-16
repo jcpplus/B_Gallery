@@ -28,7 +28,10 @@ require.config({
         bootstrap: '../node_modules/bootstrap/dist/js/bootstrap',
         underscore: '../node_modules/underscore/underscore',
         backbone: '../node_modules/backbone/backbone',
-        text: '../node_modules/requirejs-text/text'
+        text: '../node_modules/requirejs-text/text',
+        zepto: '../node_modules/zepto/zepto.min',
+        tuku : 'libs/tukuApp',
+        infiniteScroll: 'libs/infiniteScroll'
     }
 });
 
