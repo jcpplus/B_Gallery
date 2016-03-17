@@ -21,6 +21,10 @@ underscore, backbone, jquery, bootstrap
 
 # ChangeLog
 
+### 2016.03.17
+- 添加案例页面，及一些资源图片
+- amd化`infiniteScroll.js`, `tukuApp.js`
+- todo: 监听onscroll,触发lazyload img
 
 ### 2016.03.16
 - 优化数据

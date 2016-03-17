@@ -3,7 +3,7 @@ define([], function () {
         {
             id: 1,
             title: '暖心天堂',
-            Author: '作者名',
+            Author: '作者名', // 设计师名称
             reservationQuantity: 12, // 预约人数
             designFeeRange: 100, //设计费
             city: '北京',
@@ -19,7 +19,7 @@ define([], function () {
             title: '暖心天堂',
             Author: '作者名',
             reservationQuantity: 12,
-            designFeeRange: 100,
+            designFeeRange: 200,
             city: '北京',
             itemType: 1,
             priceUsual: 1.20,
@@ -33,8 +33,8 @@ define([], function () {
             title: '暖心天堂',
             Author: '作者名',
             reservationQuantity: 12,
-            designFeeRange: 100,
-            city: '北京',
+            designFeeRange: 210,
+            city: '上海',
             itemType: 1,
             priceUsual: 1.80,
             imageLink: 'img/3.jpg',

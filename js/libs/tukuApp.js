@@ -3,12 +3,8 @@
  * 组件是：下拉更新，上拉更新，页面滑动，弹层，延迟加载。
 */
 
-(function (){
+define([], function(){
     'use strict';
-
-    /*===========================
-    ===========================*/
-
     window.QingApp = function (params){
 
         //app
@@ -47,8 +43,8 @@
             end: app.support.touch ? 'touchend' : 'mouseup'
         };
         /*==================================================================
-        ************   操作成功浮层，可传入不同文本 与图标样式  ************
-        ==================================================================*/
+         ************   操作成功浮层，可传入不同文本 与图标样式  ************
+         ==================================================================*/
         // 显示成功浮层 →_→
         // tipsText: 浮层文本
         // tipsIcon: 浮层图标对应的样式名称，succeed-tips-icon =》对勾或者failure-tips-icon =》叉叉
@@ -66,8 +62,8 @@
             $('.succeed-tips-overlay, .succeed-tips-modal').remove();
         };
         /*======================================================
-        ************   拉动页面   ************
-        ======================================================*/
+         ************   拉动页面   ************
+         ======================================================*/
         app.initPullToRefresh = function (pageContainer) {
             var eventsTarget = $(pageContainer);
             if (!eventsTarget.hasClass('pull-to-refresh-content')) {
@@ -234,8 +230,8 @@
             if (pullToRefreshContent[0].QDestroyPullToRefresh) pullToRefreshContent[0].QDestroyPullToRefresh();
         };
         /* ===============================================================================
-        ************   无限滚动   ************
-        =============================================================================== */
+         ************   无限滚动   ************
+         =============================================================================== */
         function handleInfiniteScroll() {
             /*jshint validthis:true */
             var inf = $(this);
@@ -269,8 +265,8 @@
             app.attachInfiniteScroll(infiniteContent);
         };
         /* ===============================================================================
-        ************   瀑布流（两列简易瀑布流）   ************
-        =============================================================================== */
+         ************   瀑布流（两列简易瀑布流）   ************
+         =============================================================================== */
         app.waterFall = function (data) {
             var waterFallContent = $('.waterfall-scroll');
             var column = [$('#col1'), $('#col2')];
@@ -280,12 +276,12 @@
             w.getRowByHeight = function () {
                 var height = [];
                 for (var i = 0; column[i]; i++) {
-                  column[i].height = column[i].height();
-                  height.push(column[i]);
+                    column[i].height = column[i].height();
+                    height.push(column[i]);
                 }
                 // 对高度进行排序，低--》高,保证最矮的优先加载
                 height.sort(function (a, b) {
-                  return a.height - b.height;
+                    return a.height - b.height;
                 });
                 return height;
             };
@@ -305,12 +301,12 @@
             w.init = function () {
                 var rows = w.getRowByHeight(), div, k;
                 for (var i = 0; appendData[i]; i++) {
-                  div = w.createHtml(data[i].imageUrl, data[i].appSchemaUrl);
-                  // 因为是4列，所以数据以4列一个轮回加载，改成2列
-                  k = ((i + 1) > 2) ? i % 2 : i;
-                  // 在列上添加数据
-                  rows[k].append(div);
-                  w.lazyLoadImg();
+                    div = w.createHtml(data[i].imageUrl, data[i].appSchemaUrl);
+                    // 因为是4列，所以数据以4列一个轮回加载，改成2列
+                    k = ((i + 1) > 2) ? i % 2 : i;
+                    // 在列上添加数据
+                    rows[k].append(div);
+                    w.lazyLoadImg();
                 }
             };
 
@@ -323,8 +319,8 @@
             app.attachInfiniteScroll(waterFallContent);
         }
         /* ===============================================================================
-        ************   Tabs   ************
-        =============================================================================== */
+         ************   Tabs   ************
+         =============================================================================== */
         app.showTab = function (tab, tabLink) {
             var newTab = $(tab);
             if (newTab.hasClass('active')) return false;
@@ -375,8 +371,8 @@
             return true;
         };
         /*======================================================
-        ************   滑动组件   ************
-        ======================================================*/
+         ************   滑动组件   ************
+         ======================================================*/
         var Slider = function (container, params) {
             var defaults = {
                 initialSlide: 0,
@@ -948,9 +944,9 @@
             }
         };
         /*=================================================================
-        *******************   延迟加载    ********************************
-        *******************               ********************************
-        =================================================================*/
+         *******************   延迟加载    ********************************
+         *******************               ********************************
+         =================================================================*/
         app.initImagesLazyLoad = function (pageContainer) {
             pageContainer = $(pageContainer);
 
@@ -1075,11 +1071,11 @@
             }
         };
         /*=======================================================================
-        *****************************  图片预加载  *****************************
-        =======================================================================*/
+         *****************************  图片预加载  *****************************
+         =======================================================================*/
         app.preLoader = function(res, params) {
             if(!res){
-              return ;
+                return ;
             }
             var defaults = {
                 'onLoading' : function(){},
@@ -1188,9 +1184,9 @@
             }
         }
         /*===============================================================================
-        ************   引入 Fast Clicks 插件解决移动端点透问题   ************
-        ************   插件来自: https://github.com/ftlabs/fastclick   ************
-        ===============================================================================*/
+         ************   引入 Fast Clicks 插件解决移动端点透问题   ************
+         ************   插件来自: https://github.com/ftlabs/fastclick   ************
+         ===============================================================================*/
         app.initFastClicks = function () {
             if (app.params.activeState) {
                 $('html').addClass('watch-active-state');
@@ -1215,8 +1211,8 @@
                 // This event handler covers the "tap to stop scrolling".
                 if (pageContent.prop('scrollHandlerSet') !== 'yes') {
                     pageContent.on('scroll', function() {
-                      clearTimeout(activeTimeout);
-                      clearTimeout(activeNewTimeout);
+                        clearTimeout(activeTimeout);
+                        clearTimeout(activeNewTimeout);
                     });
                     pageContent.prop('scrollHandlerSet', 'yes');
                 }
@@ -1513,9 +1509,9 @@
         };
 
         /*===========================================================
-        ************   处理点击事件，确保Tap的点击速度   ************
-        ************   预绑定一些点击事件，省去JS书写    ************
-        ============================================================*/
+         ************   处理点击事件，确保Tap的点击速度   ************
+         ************   预绑定一些点击事件，省去JS书写    ************
+         ============================================================*/
         app.initClickEvents = function () {
             function handleClicks(e) {
 
@@ -1572,8 +1568,8 @@
 
     // QingApp 的原型扩展
     /*===================================
-    ************  功能检测   ************
-    =====================================*/
+     ************  功能检测   ************
+     =====================================*/
     QingApp.prototype.support = (function () {
         var support = {
             touch: !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)
@@ -1584,8 +1580,8 @@
     })();
 
     /*===================================
-    **********  设备/系统检测  **********
-    =====================================*/
+     **********  设备/系统检测  **********
+     =====================================*/
     QingApp.prototype.device = (function () {
         var device = {};
         var ua = navigator.userAgent;
@@ -1634,9 +1630,9 @@
         if (device.os && device.os === 'ios') {
             var osVersionArr = device.osVersion.split('.');
             device.minimalUi = !device.webView &&
-                                (ipod || iphone) &&
-                                (osVersionArr[0] * 1 === 7 ? osVersionArr[1] * 1 >= 1 : osVersionArr[0] * 1 > 7) &&
-                                $('meta[name="viewport"]').length > 0 && $('meta[name="viewport"]').attr('content').indexOf('minimal-ui') >= 0;
+                (ipod || iphone) &&
+                (osVersionArr[0] * 1 === 7 ? osVersionArr[1] * 1 >= 1 : osVersionArr[0] * 1 > 7) &&
+                $('meta[name="viewport"]').length > 0 && $('meta[name="viewport"]').attr('content').indexOf('minimal-ui') >= 0;
         }
 
         // Classes
@@ -1666,7 +1662,11 @@
         return device;
     })();
 
-})();
+    return {
+        TAPP: QingApp
+    }
+});
+
 
 // 扩展ZeptoJs的一些方法，主要是一些常用方法和CSS3动画，来自JQuery等插件
 ;(function($) {
@@ -1770,4 +1770,4 @@
 
 })(Zepto);
 
-var TAPP = new QingApp(); // 实例化UI组件
+//var TAPP = new QingApp(); // 实例化UI组件

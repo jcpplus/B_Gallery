@@ -1,0 +1,37 @@
+<div href="" title="">
+    <img class="item-img lazy" src="./img/m/loading-new.png"
+         data-src="<%= imageLink %>" alt="">
+    <% if (discount) { %>
+    <div class="see-num-box top">
+        <div class="num-box-icon"></div>
+        <div class="num-box-num"><%= discount %>万+</div>
+    </div>
+    <% } %>
+    <div class="designer-item-detail">
+        <div class="designer-img">
+            <img class="item-img lazy" src="./img/m/user_photo_default.jpg"
+                 data-src="<%= imageLink %>"
+                 alt="">
+        </div>
+        <div class="designer-item-text">
+            <p class="designer-font">
+                <%= title %>
+            </p>
+            <h2 class="item-name"><%= Author %> [<%= city %>]</h2>
+            <div class="designer-detail">
+                <div class="detail-subscribe">
+                    <div class="subscribe-icon"></div>
+                    <p><%= reservationQuantity %>人预约</p>
+                </div>
+                <div class="detail-area">
+                    <div class="area-icon"></div>
+                    <p><%= designFeeRange %>元/㎡</p>
+                </div>
+                <div class="detail-work">
+                    <div class="work-icon"></div>
+                    <p>6套作品</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

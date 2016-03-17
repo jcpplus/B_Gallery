@@ -1,13 +1,14 @@
 /**
+
  * Created by jesse.liang on 2016/3/11.
  */
 
 define([
     'backbone'
-], function(Backbone){
+] ,function(Backbone){
     var MenuItem = Backbone.Model.extend({
         defaults: {
-            id: '',
+            id:'',
             title: '',
             itemType: '',
             description: '',
