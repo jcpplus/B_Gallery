@@ -4,7 +4,7 @@
 
 define([
     'backbone'
-], function(Backbone) {
+], function (Backbone) {
 
     var alPageContent = Backbone.Model.extend({
        defaults: {

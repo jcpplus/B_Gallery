@@ -43,11 +43,11 @@ define([
 
     function lazyLoadImg(element) {
         // img元素上必须有.item-img这个class名
-        var unloadedpic = $(element + " .item-img").not("lazy-loaded");
-        unloadedpic.trigger('lazy');
+        var unloadedPic = $(element + " .item-img").not("lazy-loaded");
+        unloadedPic.trigger('lazy');
     }
 
     return {
-        infiniteScrollFunction: infiniteScrollFunction
+        infiniteScroll: infiniteScrollFunction
     }
 });

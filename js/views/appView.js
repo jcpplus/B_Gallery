@@ -57,12 +57,11 @@ define([
     'appRouter'
 ], function(_, Backbone, MenuCollection, alPageCollection, tuKuData, vent, itemRouter){
     var appView = Backbone.View.extend({
-        el: '.al-pg-box',
+        el: '.page.m-index',
 
         initialize: function () {
             this.menuCollection = new MenuCollection(tuKuData);
             vent.on('menu:show', this.renderMenu, this);
-
         },
         renderMenu: function () {
             this.menuCollectionView =

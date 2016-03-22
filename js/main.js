@@ -30,8 +30,8 @@ require.config({
         backbone: '../node_modules/backbone/backbone',
         text: '../node_modules/requirejs-text/text',
         zepto: '../node_modules/zepto/zepto.min',
-        tuku : 'libs/tukuApp',
-        infiniteScroll: 'libs/infiniteScroll'
+        tuku : './libs/tukuApp',
+        infiniteScroll: './libs/infiniteScroll'
     }
 });
 

@@ -7,44 +7,46 @@ define([
     'backbone',
     'models/alPageContent',
     'views/alPageContent',
-    'appVent'
-], function($, _, Backbone, alPage, alPageView, vent){
+    'appVent',
+    'tuku'
+
+], function ($, _, Backbone, alPage, alPageView, vent, tukuApp ) {
     var alPageCollectionView = Backbone.View.extend({
-        className: 'al-pg-content',
+            className: 'al-dex-box page-content infinite-scroll',
 
-        initialize: function(){
-            vent.on("renderingPropertiesChanged", this.sort, this);
-            this.collection.on('sort', this.render, this);
-            vent.on('scrollss', this.scrolls, this);
-        },
+            initialize: function () {
+                vent.on("renderingPropertiesChanged", this.sort, this);
+                this.collection.on('sort', this.render, this);
+            },
 
-        scrolls: function(scrollss) {
-            console.log('detected');
-        },
+            sort: function (renderingProperties) {
+                this.renderingProperties = renderingProperties;
+                this.collection.sortByField(this.renderingProperties.sortBy);
+            },
 
-        sort: function(renderingProperties) {
-            this.renderingProperties = renderingProperties;
-            this.collection.sortByField(this.renderingProperties.sortBy);
-        },
-
-        render: function() {
-            this.$el.empty();
-            this.newColl = this.filterCollection(this.renderingProperties.filterBy);
-            _.each(this.newColl, function(alPage) {
-                    var alPageItemView = new alPageView({ model: alPage});
+            render: function () {
+                this.$el.empty();
+                this.newColl = this.filterCollection(this.renderingProperties.filterBy);
+                _.each(this.newColl, function (alPage) {
+                    var alPageItemView = new alPageView({model: alPage});
+                    this.lazyLoadForImg();
                     this.$el.append(alPageItemView.render().$el);
-            }, this);
+                }, this);
 
-            return this;
-        },
-        filterCollection: function(filterBy) {
-            return this.collection.filter(function(alPage) {
-                if (!filterBy || alPage.get("itemType") == filterBy) {
-                    return alPage;
-                }
-            }, this);
-        }
-    });
+                return this;
+            },
+            filterCollection: function (filterBy) {
+                return this.collection.filter(function (alPage) {
+                    if (!filterBy || alPage.get("itemType") == filterBy) {
+                        return alPage;
+                    }
+                }, this);
+            },
+            lazyLoadForImg: function() {
+                var TAPP = new tukuApp();
+                TAPP.initImagesLazyLoad(this.$el);
+            }
+        });
 
     return alPageCollectionView;
 });

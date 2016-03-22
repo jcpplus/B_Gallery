@@ -1554,7 +1554,7 @@ define([], function(){
             if (app.initPullToRefresh) app.initPullToRefresh('.page-wrap');
             // 初始化简易瀑布流
             if (app.initWaterFallScroll) app.initWaterFallScroll('.page-wrap');
-            // 初始化简易瀑布流
+            // 初始化延迟加载
             if (app.initImagesLazyLoad) app.initImagesLazyLoad('.page-wrap');
 
         };
@@ -1662,9 +1662,8 @@ define([], function(){
         return device;
     })();
 
-    return {
-        TAPP: QingApp
-    }
+    return QingApp;
+
 });
 
 
