@@ -17,6 +17,7 @@ define([
             initialize: function () {
                 vent.on("renderingPropertiesChanged", this.sort, this);
                 this.collection.on('sort', this.render, this);
+                //vent.on("renderingPropertiesChanged", this.lazyLoadForImg, this);
             },
 
             sort: function (renderingProperties) {

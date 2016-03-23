@@ -13,13 +13,18 @@ underscore, backbone, jquery, bootstrap
 - ~~设计API~~
 - 改进API
 - ~~单页面浏览~~
-- 点击图片详细信息
+- ~~点击图片详细信息~~
 - 持续改进, 性能优化
 - 必要的文档说明，如本README
-- lazyLoad img
+- ~~lazyLoad img~~
 - 重构为Vue.js...
 
 # ChangeLog
+
+
+### 3.23
+- 图片详情信息页面
+- nav独立
 
 ### 3.22
 - top Nav

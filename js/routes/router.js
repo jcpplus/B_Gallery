@@ -14,10 +14,10 @@ define([
         index: function () {
             // 见源码119行
             // Backbone.Events
-            vent.trigger('menu:show');
+            vent.trigger('pageContent:show');
         },
-        showMenuItem: function (menuitemId) {
-            vent.trigger('menuitem:show', menuitemId);
+        showMenuItem: function (itemId) {
+            vent.trigger('pageItem:show', itemId);
         }
     });
     return Router;
