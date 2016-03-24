@@ -27,10 +27,12 @@
                     <div class="area-icon"></div>
                     <p><%= designFeeRange %>元/㎡</p>
                 </div>
+                <% if(discount) {%>
                 <div class="detail-work">
                     <div class="work-icon"></div>
-                    <p>6套作品</p>
+                    <p><%= discount %>套作品</p>
                 </div>
+                <% } %>
             </div>
         </div>
     </div>

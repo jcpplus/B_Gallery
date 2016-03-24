@@ -8,12 +8,11 @@ define([
     'appVent'
 ], function(_, Backbone, alPageDetailsTemplate, vent){
     var alPageDetailsView = Backbone.View.extend({
-        className: 'aldt-img-list',
+        className: 'page-content aldt-img-list',
 
         initialize: function(){
             vent.on('pageContent:show', this.destroyView, this);
         },
-
         destroyView: function() {
             this.remove();
         },

@@ -259,8 +259,13 @@ a {
   left: 0;
   width: 4rem;
   height: 1.77778rem;
-  background: url(../img/nav-back.png) no-repeat;
+  background: url(../img/m/nav-back.png) no-repeat;
   background-size: contain;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    font-size: .5rem;
+
 }
 .tuku-nav .all-tuku-title {
   display: -webkit-box;

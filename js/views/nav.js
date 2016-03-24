@@ -9,15 +9,15 @@ define([
     'appRouter'
 ], function (_, Backbone, template, vent, itemRouter) {
     var navView = Backbone.View.extend({
-        tagName: 'nav',
-        id: 'nav',
-
+        className: 'nav',
         initialize: function () {
-            this.render();
-            //this.collection.on('render', this.render, this);
+            //this.render();
+            //this.collection.on('change', this.render, this);
+            _.bindAll(this, 'render');
+            vent.on('goIndex', this.goToIndex, this);
         },
         events: {
-            'click .nav-title': 'goToIndex'
+            'click': 'goToIndex'
         },
         goToIndex: function () {
             itemRouter.navigate('', true);
@@ -32,9 +32,12 @@ define([
 
         titleText: function() {
             var _hash = window.location.hash;
-            if(_hash == "") {
+            var reg = new RegExp("[item]+");
+            if(_hash == "" || !reg.test(_hash)) {
+                this.$el.find('.nav-back').hide();
                 var txt = this.$el.find('.nav-title').html('案例列表');
             } else {
+                this.$el.find('.nav-back').css('display', 'inherit');
                 var txt = this.$el.find('.nav-title').html('案例详情');
             }
 

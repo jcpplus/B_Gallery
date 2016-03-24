@@ -21,6 +21,8 @@ underscore, backbone, jquery, bootstrap
 
 # ChangeLog
 
+### 3.24
+- 用`cmder`来提交代码，github上无法计算`Contribution activity`?
 
 ### 3.23
 - 图片详情信息页面
